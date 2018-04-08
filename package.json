@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "no-kafka": "^3.2.9"
+  }
+}
