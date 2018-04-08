@@ -1,6 +1,8 @@
 # Imports
-import kafka.KafkaProducer as kafka
+from kafka import KafkaProducer as kafka
 import json
+
+print("producer running")
 
 # A producer sends messages aka records!
 
@@ -13,4 +15,4 @@ producer = kafka(bootstrap_servers = 'localhost:9092',
 
 # Send the messages to the consumer
 for aMessage in range(6):
-    producer.send('kafka-test-topic', { 'values' : message })
+    producer.send('kafka-test-topic', { 'values' : aMessage })
