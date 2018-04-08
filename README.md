@@ -20,7 +20,7 @@
 
 Testing:
 
-1. Download the Kafka Binaries
+1. Download the Kafka Binaries from their website. You also need JDK 8 or lower. JDK 9 didn't work for me and many others.
 
 2. Run the ZooKeeper </br>
 ``` ./bin/zookeeper-server-start.sh config/zookeeper.properties```
@@ -28,13 +28,16 @@ Testing:
 3. Run the Broker </br>
 ```./bin/kafka-server-start.sh config/server.properties```
 
-4. Download the node packages in the project repo & launch virtualenv with kafka-python </br>
+4. Create a topic </br>
+```bin/kafka-topics.sh --create --topic kafka-test-topic --zookeeper localhost:2181 --partitions 1 --replication-factor 1```
+
+5. Download the node packages in the project repo & launch virtualenv with kafka-python </br>
 ``` npm install ``` </br>
 ``` pip install kafka-python```
 
-5. Run the consumer </br>
+6. Run the consumer </br>
 ``` node consumer/consumer.js```
 
-6. Run the producer </br>
+7. Run the producer </br>
 ``` python3 producer/producer.py```
 
